@@ -1,0 +1,103 @@
+KiteRunner:
+
+Bruteforcing/ Fuzzing tool for APIs, uses info on how the API was built
+We can give our Website as the input
+We can give list of endpoints in the notepad as input.
+But when trying it on a peak website, it was giving all the endpoints with 411 response or 404. It is just using the wordlist to append the words in the wordlist on the api endpoints.
+
+Ffuf (Fuzz faster U fool) is also a fuzzing tool similar to the kiterunner. 
+
+Ffuf is also a tool fuzzing the API endpoints based on the wordlist provided. 
+
+Gives output as JSON, prettyprint, text
+
+
+
+
+
+
+
+Installation:
+
+Donwload source code Zip file
+
+zsh: corrupt history file /home/sai/.zsh_history
+┌──(sai㉿kali)-[~/Downloads/kiterunner-1.0.2]
+└─$ la
+api-signatures  doc.go      .golangci.yml     go.sum    LICENSE   readme.md
+benchmark       .github     go.mod            hack      makefile  routes
+cmd             .gitignore  .goreleaser.yaml  internal  pkg
+                                                                                                
+┌──(sai㉿kali)-[~/Downloads/kiterunner-1.0.2]
+└─$ cd cmd/kiterunner
+                                                                                                
+┌──(sai㉿kali)-[~/Downloads/kiterunner-1.0.2/cmd/kiterunner]
+└─$ ls
+cmd  doc.go  main.go
+                                                                                                
+┌──(sai㉿kali)-[~/Downloads/kiterunner-1.0.2/cmd/kiterunner]
+└─$ go get                                                                
+Command 'go' not found, but can be installed with:
+sudo apt install gccgo-go 
+sudo apt install golang-go
+                                                                                                
+┌──(sai㉿kali)-[~/Downloads/kiterunner-1.0.2/cmd/kiterunner]
+└─$ sudo apt install golang-go
+
+┌──(sai㉿kali)-[~/Downloads/kiterunner-1.0.2/cmd/kiterunner]
+└─$ go get                                                                                                                                                                                                                                         
+┌──(sai㉿kali)-[~/Downloads/kiterunner-1.0.2/cmd/kiterunner]
+└─$ ls
+cmd  doc.go  main.go
+
+┌──(sai㉿kali)-[~/Downloads/kiterunner-1.0.2/cmd/kiterunner]
+└─$ ls
+cmd  doc.go  kiterunner  main.go
+                                                                                                                                                                                                                                            
+┌──(sai㉿kali)-[~/Downloads/kiterunner-1.0.2/cmd/kiterunner]
+└─$ ./kiterunner
+kite is a context based webscanner that uses common
+api paths for content discovery of an applications api paths
+
+
+Also download the wordlists and extract the file.
+
+https://ryn0f1sh.medium.com/kiterunner-api-fuzzer-windows-installation-b6e524b93ad9
+
+
+Running Kiterunner:
+
+./kiterunner scan 
+
+./kiterunner scan -d=2 
+
+./kiterunner scan -d=3 --kitebuilder-full-scan 
+
+./kiterunner scan -w /home/sai/Downloads/routes-large.kite  
+
+./kiterunner brute -A -d=3 
+
+/kiterunner brute -A=apiroutes-210228 
+
+/kiterunner scan -A=apiroutes-210228 
+
+./kiterunner scan list.txt  -w /home/sai/Downloads/routes-large.kite -A=apiroutes-210228 
+
+./kiterunner scan           -w /home/sai/Downloads/routes-large.kite -A=apiroutes-210328:20000 -x 20 -j 1 --fail-status-codes 400,401,404,403,501,502,426,411
+
+
+
+-w /home/sai/Downloads/routes-large.kite -A=apiroutes-210228 
+
+
+
+
+
+
+
+
+
+
+
+
+
